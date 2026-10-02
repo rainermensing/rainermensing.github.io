@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f6f4">
+    <meta name="description" content="Rainer Mensing is a Berlin-based data engineer and consultant building dependable data platforms, ML pipelines, and production LLM applications.">
+    <title>Rainer Mensing — Data Engineer &amp; Consultant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Roboto+Slab:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #252626;
+        --muted: #686b6b;
+        --accent: #8f0d0d;
+        --paper: #f7f6f4;
+        --surface: #fff;
+        --line: #e7e3df;
+        --soft-accent: #f6eaea;
+        --serif: "Roboto Slab", Georgia, serif;
+        --sans: "DM Sans", Arial, sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; }
+      a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+      .shell { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: 22px;
+        border-bottom: 1px solid var(--line);
+      }
+      .wordmark {
+        color: var(--accent);
+        font-family: var(--serif);
+        font-size: 1.05rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      nav { display: flex; gap: 28px; }
+      nav a {
+        color: var(--muted);
+        font-size: .88rem;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      nav a:hover, .text-link:hover { color: var(--accent); }
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.5fr) minmax(250px, .7fr);
+        align-items: center;
+        gap: 64px;
+        padding-block: 88px 82px;
+      }
+      .eyebrow {
+        margin: 0 0 14px;
+        color: var(--accent);
+        font-size: .78rem;
+        font-weight: 700;
+        letter-spacing: .13em;
+        text-transform: uppercase;
+      }
+      h1, h2, h3, p { margin-top: 0; }
+      h1 {
+        max-width: 720px;
+        margin-bottom: 18px;
+        font-family: var(--serif);
+        font-size: clamp(2.65rem, 6vw, 4.8rem);
+        font-weight: 600;
+        letter-spacing: -.055em;
+        line-height: 1.1;
+      }
+      h1 span { color: var(--accent); }
+      .intro {
+        max-width: 660px;
+        margin-bottom: 28px;
+        color: var(--muted);
+        font-size: 1.1rem;
+      }
+      .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+      .button {
+        display: inline-flex;
+        min-height: 46px;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        border: 1px solid var(--accent);
+        border-radius: 5px;
+        background: var(--accent);
+        color: white;
+        font-size: .9rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: background .2s ease, color .2s ease;
+      }
+      .button:hover { background: #710909; }
+      .button.secondary { background: transparent; color: var(--accent); }
+      .button.secondary:hover { background: var(--soft-accent); }
+      .profile-card {
+        position: relative;
+        overflow: hidden;
+        padding: 30px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: 0 16px 45px rgb(38 28 20 / 5%);
+      }
+      .profile-card::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: var(--accent);
+        content: "";
+      }
+      .profile-card h2 {
+        margin-bottom: 20px;
+        font-family: var(--serif);
+        font-size: 1.2rem;
+      }
+      .profile-line { margin: 0 0 15px; }
+      .profile-line:last-child { margin-bottom: 0; }
+      .profile-label {
+        display: block;
+        color: var(--muted);
+        font-size: .75rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+      .profile-value { font-size: .94rem; font-weight: 600; }
+      .profile-value a { text-decoration-color: #d4b7b7; text-underline-offset: 3px; }
+      .section { padding-block: 68px; border-top: 1px solid var(--line); }
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 30px;
+      }
+      .section-heading h2 {
+        margin: 0;
+        font-family: var(--serif);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        letter-spacing: -.04em;
+      }
+      .section-heading p { max-width: 440px; margin: 0; color: var(--muted); }
+      .experience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+      .job {
+        padding: 25px 26px;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: var(--surface);
+      }
+      .job.current { grid-column: 1 / -1; }
+      .job-top {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 6px 18px;
+        margin-bottom: 12px;
+      }
+      .job h3 { margin: 0; font-family: var(--serif); font-size: 1.16rem; }
+      .date { color: var(--accent); font-size: .85rem; font-weight: 700; }
+      .company { margin-bottom: 2px; font-weight: 700; }
+      .location { color: var(--muted); font-size: .88rem; }
+      .job ul { margin: 16px 0 0; padding-left: 20px; color: var(--muted); }
+      .job li + li { margin-top: 6px; }
+      .compact-copy { color: var(--muted); }
+      .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+      .subheading {
+        margin-bottom: 18px;
+        font-family: var(--serif);
+        font-size: 1.3rem;
+      }
+      .education-item { padding: 0 0 20px; border-bottom: 1px solid var(--line); }
+      .education-item + .education-item { padding-top: 20px; }
+      .education-item h3 { margin: 0 0 3px; font-size: 1rem; }
+      .education-item p { margin: 0; color: var(--muted); font-size: .9rem; }
+      .education-item .note { margin-top: 6px; font-size: .84rem; }
+      .skill-list { display: flex; flex-wrap: wrap; gap: 9px; margin: 0; padding: 0; list-style: none; }
+      .skill-list li {
+        padding: 7px 12px;
+        border: 1px solid #e6d5d5;
+        border-radius: 4px;
+        background: var(--soft-accent);
+        color: #632222;
+        font-size: .85rem;
+        font-weight: 600;
+      }
+      .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      .tool {
+        min-height: 126px;
+        padding: 19px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--surface);
+      }
+      .tool h3 { margin-bottom: 7px; font-size: .96rem; }
+      .tool p { margin: 0; color: var(--muted); font-size: .86rem; }
+      .credentials {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .credential {
+        padding: 18px;
+        border-left: 3px solid var(--accent);
+        background: var(--surface);
+      }
+      .credential strong { display: block; font-size: .92rem; }
+      .credential span { color: var(--muted); font-size: .85rem; }
+      .languages { display: flex; flex-wrap: wrap; gap: 12px; }
+      .language {
+        flex: 1 1 150px;
+        padding: 16px 18px;
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        background: var(--surface);
+      }
+      .language strong { display: block; }
+      .language span { color: var(--muted); font-size: .85rem; }
+      .contact {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 32px;
+        border-radius: 8px;
+        background: #292a2a;
+        color: white;
+      }
+      .contact h2 { margin-bottom: 5px; font-family: var(--serif); font-size: 1.65rem; }
+      .contact p { margin: 0; color: #d0d0d0; }
+      .contact .button { flex: 0 0 auto; border-color: white; background: white; color: var(--accent); }
+      .contact .button:hover { background: #f1e9e9; }
+      footer { padding-block: 28px; color: var(--muted); font-size: .82rem; text-align: center; }
+
+      @media (max-width: 760px) {
+        .hero { grid-template-columns: 1fr; gap: 32px; padding-block: 60px; }
+        .profile-card { max-width: 480px; }
+        .two-column { gap: 34px; }
+      }
+      @media (max-width: 560px) {
+        .shell { width: min(100% - 32px, 1120px); }
+        .topbar { align-items: flex-start; }
+        nav { gap: 13px; }
+        nav a { font-size: .78rem; }
+        .wordmark { font-size: .95rem; }
+        .hero { padding-block: 46px; }
+        .intro { font-size: 1rem; }
+        .section { padding-block: 48px; }
+        .section-heading { display: block; }
+        .section-heading p { margin-top: 10px; }
+        .experience-grid, .two-column, .tool-grid, .credentials { grid-template-columns: 1fr; }
+        .job.current { grid-column: auto; }
+        .contact { align-items: flex-start; flex-direction: column; padding: 25px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition-duration: .01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="wordmark" href="#top">Rainer Mensing</a>
+        <nav aria-label="Main navigation">
+          <a href="#experience">Experience</a>
+          <a href="#expertise">Expertise</a>
+          <a href="#about">About</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="intro-title">
+          <div>
+            <p class="eyebrow">Data Engineer &amp; Consultant · Berlin, Germany</p>
+            <h1 id="intro-title">Making data work <span>in the real world.</span></h1>
+            <p class="intro">I help teams turn complex data and machine-learning work into reliable products. From scalable pipelines to production-ready LLM applications, I bring engineering, cloud, and consulting together to deliver outcomes that last.</p>
+            <div class="actions">
+              <a class="button" href="mailto:rainer.mensing@hotmail.de">Get in touch</a>
+              <a class="button secondary" href="#experience">Explore my experience</a>
+            </div>
+          </div>
+          <aside class="profile-card" aria-label="Contact details">
+            <h2>Let’s connect</h2>
+            <p class="profile-line"><span class="profile-label">Based in</span><span class="profile-value">Berlin, Germany</span></p>
+            <p class="profile-line"><span class="profile-label">Email</span><span class="profile-value"><a href="mailto:rainer.mensing@hotmail.de">rainer.mensing@hotmail.de</a></span></p>
+            <p class="profile-line"><span class="profile-label">LinkedIn</span><span class="profile-value"><a href="https://www.linkedin.com/in/rainermensing/">rainermensing</a></span></p>
+            <p class="profile-line"><span class="profile-label">GitHub</span><span class="profile-value"><a href="https://github.com/rainermensing">rainermensing</a></span></p>
+          </aside>
+        </section>
+
+        <section class="section" id="experience" aria-labelledby="experience-title">
+          <div class="section-heading">
+            <h2 id="experience-title">Experience</h2>
+            <p>Building and improving data products with teams across insurance, retail, and manufacturing.</p>
+          </div>
+          <div class="experience-grid">
+            <article class="job current">
+              <div class="job-top">
+                <h3>Data Engineer &amp; Consultant</h3>
+                <span class="date">August 2024 — Present</span>
+              </div>
+              <p class="company">inovex GmbH <span class="location">· Berlin, Germany</span></p>
+              <ul>
+                <li>Productionize big data pipelines and machine-learning models on-premises and across major cloud platforms.</li>
+                <li>Design and deploy LLM applications for production; improve code scalability and maintainability.</li>
+                <li>Increase workload reliability with monitoring, alerts, dashboards, automated testing, and CI/CD.</li>
+                <li>Work with analysts and product owners to turn business requirements into practical outcomes.</li>
+              </ul>
+            </article>
+            <article class="job">
+              <div class="job-top">
+                <h3>Data Engineer &amp; Consultant</h3>
+                <span class="date">June 2022 — July 2024</span>
+              </div>
+              <p class="company">Informationsfabrik GmbH <span class="location">· Münster, Germany</span></p>
+              <p class="compact-copy">Consulted clients in insurance, retail, and manufacturing, delivering dependable data and ML workloads.</p>
+            </article>
+            <article class="job">
+              <div class="job-top">
+                <h3>Data Specialist / Analyst</h3>
+                <span class="date">April — December 2021</span>
+              </div>
+              <p class="company">Future Matters Project <span class="location">· Berlin, Germany</span></p>
+              <p class="compact-copy">Automated reporting and operationalized data flows for program monitoring.</p>
+            </article>
+          </div>
+          <p class="compact-copy" style="margin: 22px 0 0"><strong>Earlier experience &amp; internships:</strong> German Development Agency (GIZ), CARE International, and the International Social Security Association (2017–2021).</p>
+        </section>
+
+        <section class="section" id="expertise" aria-labelledby="expertise-title">
+          <div class="section-heading">
+            <h2 id="expertise-title">What I bring</h2>
+            <p>Hands-on technical delivery with the communication and context to make it useful.</p>
+          </div>
+          <ul class="skill-list" aria-label="Core skills">
+            <li>Data Engineering</li>
+            <li>Agentic Software Development</li>
+            <li>Dev, Data &amp; MLOps</li>
+            <li>LLM Applications</li>
+            <li>Software Architecture</li>
+            <li>Agent-Based Systems</li>
+            <li>Business Analysis</li>
+            <li>Communication</li>
+            <li>Consulting &amp; Mentoring</li>
+          </ul>
+        </section>
+
+        <section class="section" aria-labelledby="toolbelt-title">
+          <div class="section-heading">
+            <h2 id="toolbelt-title">Toolbelt</h2>
+            <p>A selection of tools and technologies I work with.</p>
+          </div>
+          <div class="tool-grid">
+            <article class="tool"><h3>Generative AI</h3><p>Coding agents, MCP, RAG, agentic workflows, tool use, LLMOps, vector stores</p></article>
+            <article class="tool"><h3>Data platforms</h3><p>dbt, MLflow, Airflow, Prefect, Databricks, Kubernetes</p></article>
+            <article class="tool"><h3>Python</h3><p>PySpark, Pydantic AI, LangChain, SQLAlchemy, FastAPI</p></article>
+            <article class="tool"><h3>Infrastructure &amp; delivery</h3><p>Terraform, Pulumi, Ansible, Azure DevOps, GitHub, GitLab</p></article>
+          </div>
+        </section>
+
+        <section class="section" id="about" aria-labelledby="about-title">
+          <div class="section-heading">
+            <h2 id="about-title">About</h2>
+            <p>An international background, paired with a practical focus on engineering and collaboration.</p>
+          </div>
+          <div class="two-column">
+            <div>
+              <h3 class="subheading">Education</h3>
+              <div class="education-item">
+                <h3>M.A., Development Studies</h3>
+                <p>Graduate Institute Geneva · 2018–2021</p>
+                <p class="note">Scholarship from the German Academic Scholarship Foundation</p>
+              </div>
+              <div class="education-item">
+                <h3>B.Sc., International Business Administration</h3>
+                <p>University of Twente · 2014–2017</p>
+                <p class="note">Graduated with Honors</p>
+              </div>
+            </div>
+            <div>
+              <h3 class="subheading">Certifications</h3>
+              <div class="credentials">
+                <div class="credential"><strong>Data Engineering Professional</strong><span>Databricks · 2025</span></div>
+                <div class="credential"><strong>Azure Data Engineer Associate</strong><span>Microsoft · 2022</span></div>
+                <div class="credential"><strong>Data Engineering Bootcamp</strong><span>Pipeline Academy · 2022</span></div>
+              </div>
+              <h3 class="subheading" style="margin-top: 30px">Languages</h3>
+              <div class="languages">
+                <div class="language"><strong>German</strong><span>★★★★★</span></div>
+                <div class="language"><strong>English</strong><span>★★★★★</span></div>
+                <div class="language"><strong>Dutch</strong><span>★★★★☆</span></div>
+                <div class="language"><strong>French</strong><span>★★★☆☆</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact" aria-labelledby="contact-title">
+          <div>
+            <h2 id="contact-title">Have a data challenge?</h2>
+            <p>Let’s talk about how I can help your team make progress.</p>
+          </div>
+          <a class="button" href="mailto:rainer.mensing@hotmail.de">Email Rainer</a>
+        </section>
+      </main>
+
+      <footer>© <span id="year">2026</span> Rainer Mensing · Berlin, Germany</footer>
+    </div>
+  </body>
+</html>
