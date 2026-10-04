@@ -14,4 +14,5 @@
 - There is no build, package manager, automated test, lint, or CI setup in this repository; do not invent an install/build workflow.
 - `scripts/cv.js` uses browser `fetch()`, so preview from the repository root with `python3 -m http.server 8000`; do not open the pages directly with `file://`.
 - Check `/` and `/about.html` in a browser at desktop and narrow widths. When CV markup or styling changes, also check local `/cv.html` with `.cv-secrets.json` present and inspect print preview for both CV pages because `styles.css` has dedicated print rules.
+- For PDF export and browser verification, use `http://127.0.0.1:8000/Rainer-Mensing-CV.pdf` while the local server is running; direct `file://` PDF URLs may be blocked by the browser. External logos protected by a remote challenge may not render in automated exports, so use a permitted local asset when the logo must be guaranteed.
 - For public-page changes, verify that `/` contains no email or phone links and does not request `.cv-secrets.json`. Keep `cv.html` and `.cv-secrets.json` ignored and run `git diff --check` before finishing.

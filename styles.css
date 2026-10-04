@@ -89,6 +89,25 @@ a:focus-visible {
   content: "";
 }
 
+.profile-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+
+.profile-heading > div {
+  min-width: 0;
+}
+
+.header-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 24px;
+}
+
 .eyebrow {
   margin: 0 0 2px;
   color: var(--accent);
@@ -172,29 +191,6 @@ h1 {
   height: 16px;
 }
 
-.site-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
-  margin-top: 18px;
-  padding-top: 15px;
-  border-top: 1px solid var(--line);
-}
-
-.site-nav a {
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 750;
-  text-decoration: none;
-}
-
-.site-nav a[aria-current="page"] {
-  color: var(--ink);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.25em;
-}
-
 .external-logo {
   display: block;
   width: 100%;
@@ -220,6 +216,22 @@ h1 {
   display: grid;
   gap: 20px;
   min-width: 0;
+}
+
+.sidebar-column {
+  display: contents;
+}
+.sidebar .cv-section[aria-labelledby="skills-heading"] {
+  order: 1;
+}
+.sidebar .cv-section[aria-labelledby="toolbelt-heading"] {
+  order: 2;
+}
+.sidebar .cv-section[aria-labelledby="certificates-heading"] {
+  order: 3;
+}
+.sidebar .cv-section[aria-labelledby="languages-heading"] {
+  order: 4;
 }
 
 .cv-section {
@@ -855,11 +867,14 @@ h1 {
   }
 
   .sidebar {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .sidebar .cv-section:nth-child(2) {
-    grid-row: auto;
+  .sidebar-column {
+    display: grid;
+    align-content: start;
+    gap: 4mm;
+    min-width: 0;
   }
 
   .entry-topline {
@@ -889,7 +904,7 @@ h1 {
 @media print {
   @page {
     size: A4;
-    margin: 12mm;
+    margin: 8mm;
   }
 
   :root {
@@ -902,6 +917,7 @@ h1 {
     background: #fff;
     color: #222;
     font-size: 9pt;
+    zoom: 0.8;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
@@ -936,6 +952,21 @@ h1 {
     gap: 4mm;
   }
 
+  .sidebar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sidebar-column:first-child {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4mm;
+    min-width: 0;
+  }
+
+  .sidebar .cv-section:nth-child(2) {
+    grid-row: auto;
+  }
+
   .cv-section,
   .sidebar .cv-section {
     padding: 5mm;
@@ -949,7 +980,7 @@ h1 {
   .timeline,
   .education-list,
   .tool-groups {
-    gap: 3mm;
+    gap: 4mm;
   }
 
   .contact-list {
