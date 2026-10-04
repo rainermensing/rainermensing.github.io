@@ -1,2 +1,9 @@
-# rainermensing.github.io
-About me
+# Hey! My name is Rainer (spoken "Rhiner").
+
+As a little kid, one of my favorite pastimes after a heavy rain was to go to the tracks left in the mud by the tractors on my parents' farm and connect the puddles so that water could flow from one to another.
+
+Today, I still love to do the same thing, just with data. A lot of data. I do not have a formal background in computer science, but that was not a big hurdle anymore when I got into the data space. Modern data platforms and frameworks abstract most of the groundwork and bare-metal stuff away. Python is like the YAML of programming languages. With LLMs and coding agents, the expert answer to most technical problems is just one prompt away.
+
+Don't get me wrong, I am still a nerd who enjoys coding and debugging. Sometimes I feel like coding agents take some of the fun out of that. And yes, while some hardliners will already disagree, I still like to understand what the AI is saying or doing. But the point is that what makes a good data engineer today is really no longer technical know-how, but soft skills and methodology. You are not only creating and maintaining pipelines between data layers, but also between people and teams. You are building business processes. You need to have an intuition for how to communicate well.
+
+If you [check my CV](rainermensing.github.io), you will realize that I have a passion for social problems. Although I decided it would be better not to make it a profession, that passion still influences my style. What I like most is helping others solve their problems. I am an enabler, which ultimately is what data engineering is all about. Hit me up on [LinkedIn](https://www.linkedin.com/in/rainermensing/) if you want to get in touch.
