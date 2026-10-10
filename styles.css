@@ -887,7 +887,11 @@ h1 {
   }
 
   .sidebar {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sidebar .cv-section:nth-child(2) {
+    grid-row: auto;
   }
 
   .sidebar-column {
