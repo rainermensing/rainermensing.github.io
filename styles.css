@@ -682,8 +682,7 @@ h1 {
 
 .mark-mlflow,
 .mark-terraform,
-.mark-azure,
-.mark-microsoft {
+.mark-azure {
   background: #edf3fa;
   color: #34678d;
 }
@@ -756,8 +755,9 @@ h1 {
   height: 19px;
 }
 
-.mark-microsoft {
-  border-color: #dce8f0;
+.credential-list .mark-isaqb .external-logo {
+  width: 29px;
+  height: auto;
 }
 
 .mark-pipeline {
